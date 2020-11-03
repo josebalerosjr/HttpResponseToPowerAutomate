@@ -1,0 +1,24 @@
+﻿@model WebApplication.Model.Person
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Test" asp-action="SendNameAge" method="post">
+            <input type="hidden" name="hname" id="hname" />
+            <input type="hidden" name="hage" id="hage" />
+            <div class="form-group">
+                <input asp-for="Name" id="name" name="name" class=" form-control form-control-sm" placeholder="Type your Name" />
+                <span asp-validation-for="Name" class="text-danger small"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Age" id="age" name="age" class=" form-control form-control-sm" placeholder="Type your Age" />
+                <span asp-validation-for="Age" class="text-danger small"></span>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    @*<a asp-controller="Test" asp-action="SendNameAge" class="btn btn-success">Json Trigger</a>*@
+                    <input asp-controller="Test" asp-action="Index2" type="submit" name="submited" value="Json Trigger" class="btn btn-success" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
